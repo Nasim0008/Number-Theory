@@ -6,21 +6,20 @@ void seive()
     cout<< "Enter the lower and upper bound: ";
     cin>>a>>n;
     vector<int>v;
-    int prime[n+3];
-    memset(prime,0,sizeof(prime));
+    bool prime[n+3];
     for(int i=2;i*i<=n;i++)
     {
-        if(prime[i]==0)
+        if(prime[i]==false)
         {
             for(int j=i*i;j<=n;j+=i)
             {
-                prime[j]=1;
+                prime[j]=true;
             }
         }
     }
     for(int i=2;i<=n;i++)
     {
-        if(prime[i]==0)
+        if(prime[i]==false)
         {
             v.push_back(i);
         }
